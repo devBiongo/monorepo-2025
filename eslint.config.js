@@ -28,7 +28,7 @@ export default tseslint.config(
   eslintConfigPrettier,
   {
     rules: {
-      'no-console': 'warn',
+      'no-console': 'error',
       'no-debugger': 'warn',
       eqeqeq: 'error',
       'prefer-const': 'error'
