@@ -1,1 +1,2 @@
-echo demo
+echo -e "\e[1;34mchecking your code ~  wait a minute ...\e[0m"
+pnpm lint

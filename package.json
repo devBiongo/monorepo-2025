@@ -4,7 +4,7 @@
   "description": "2025",
   "type": "module",
   "scripts": {
-    "dev": "",
+    "fix": "",
     "lint": "eslint",
     "prepare": "husky"
   },
