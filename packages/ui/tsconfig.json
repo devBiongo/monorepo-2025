@@ -1,10 +1,4 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "baseUrl": ".",
-    "declaration": true
-  },
+  "extends": "../../tsconfig.app.json",
   "include": ["src"]
 }
