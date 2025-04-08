@@ -1,2 +1,4 @@
-echo -e "\e[1;34mchecking your code ~  wait a minute ...\e[0m"
+echo -e "\e[1;34m 📢 Verifying your code... Just a moment.\e[0m"
 pnpm lint
+
+

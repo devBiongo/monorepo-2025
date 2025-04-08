@@ -8,4 +8,6 @@ function App() {
   );
 }
 
+console.log(123123);
+
 export default App;
