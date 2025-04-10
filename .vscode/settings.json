@@ -8,5 +8,6 @@
   // 🔰 By default, VSCode does not use Prettier to format .ts files.
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "eslint.workingDirectories": [{ "pattern": "apps/*/" }, { "pattern": "packages/*/" }]
 }
