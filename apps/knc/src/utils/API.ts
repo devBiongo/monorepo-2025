@@ -5,7 +5,6 @@ export default class API {
 
   static {
     this.#instance = axios.create({
-      baseURL: import.meta.env.VITE_API_BASE_URL,
       timeout: import.meta.env.VITE_API_TIME_OUT,
       headers: { 'Content-Type': 'application/json' }
     });
