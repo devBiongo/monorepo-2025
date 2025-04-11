@@ -19,20 +19,6 @@ export default class API {
     );
   }
 
-  private static headerSetup<T>(
-    data: T,
-    config?: AxiosRequestConfig
-  ): AxiosRequestConfig | undefined {
-    if (!(data instanceof FormData)) {
-      if (!config) config = {};
-      if (!config.headers) config.headers = {};
-      if (Reflect.get(config.headers, 'Content-Type') === 'application/json') {
-        Reflect.set(config.headers, 'Content-Type', 'multipart/form-data');
-      }
-    }
-    return config;
-  }
-
   public static get<T, R = AxiosResponse<T>>(url: string, config?: AxiosRequestConfig): Promise<R> {
     return this.#instance.get<T, R>(url, config).catch((error: AxiosError) => {
       throw error;
@@ -44,11 +30,9 @@ export default class API {
     data?: T,
     config?: AxiosRequestConfig
   ): Promise<R> {
-    return this.#instance
-      .post<T, R>(url, data, this.headerSetup(data, config))
-      .catch((error: AxiosError) => {
-        throw error;
-      });
+    return this.#instance.post<T, R>(url, data, config).catch((error: AxiosError) => {
+      throw error;
+    });
   }
 
   public static put<T, R = AxiosResponse<T>>(
@@ -56,11 +40,9 @@ export default class API {
     data?: T,
     config?: AxiosRequestConfig
   ): Promise<R> {
-    return this.#instance
-      .put<T, R>(url, data, this.headerSetup(data, config))
-      .catch((error: AxiosError) => {
-        throw error;
-      });
+    return this.#instance.put<T, R>(url, data, config).catch((error: AxiosError) => {
+      throw error;
+    });
   }
 
   public static delete<T, R = AxiosResponse<T>>(
@@ -77,10 +59,8 @@ export default class API {
     data?: T,
     config?: AxiosRequestConfig
   ): Promise<R> {
-    return this.#instance
-      .patch<T, R>(url, data, this.headerSetup(data, config))
-      .catch((error: AxiosError) => {
-        throw error;
-      });
+    return this.#instance.patch<T, R>(url, data, config).catch((error: AxiosError) => {
+      throw error;
+    });
   }
 }
